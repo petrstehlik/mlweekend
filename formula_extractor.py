@@ -1,3 +1,11 @@
+"""
+Machine Learning Weekend Entry Task
+
+See README.md for more info.
+
+Author: Petr Stehlik <pe.stehlik@gmail.com>
+Date: 04. 10. 2017
+"""
 import requests
 import json
 import numpy
@@ -14,7 +22,6 @@ def get(x):
     r = requests.get("http://165.227.157.145:8080/api/do_measurement?x={}".format(x))
 
     if r.status_code == 200:
-        #print(json.dumps(r.json()))
         return (r.json())["data"]
 
     else:
@@ -27,6 +34,9 @@ def output_gnuplot(data):
 
 
 if __name__ == "__main__":
+    """
+    Run the main program which obtains data and computes the polynomial over them
+    """
 
     """
     key: x value
