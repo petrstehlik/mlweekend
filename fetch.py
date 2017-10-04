@@ -85,9 +85,12 @@ if __name__ == "__main__":
     # Compute polynomial up to 10-th power
     polys = numpy.polyfit(x_list, y_list, 10)
 
+    print("# Resulting polynomial: \n# ", end="")
     for i in range(0, len(polys) - 1):
         if not numpy.isclose(polys[i], 0.00000):
             print("%.8f*x**%i + " % (polys[i], 10-i), end="")
-    print("%.8f + " % (polys[:-1]))
+
+    # Print last polynomial member
+    print("%.8f" % (polys[-1]))
 
 
